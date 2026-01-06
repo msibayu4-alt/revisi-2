@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elegant Birthday Invitation</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --gold: #c9a45c;
+    --gold-bright: #e4cc85;
+    --ivory: #f9f8f4;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: var(--ivory);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* CARD */
+.invitation {
+    width: 380px;
+    padding: 56px 44px;
+    background: var(--ivory);
+    border-radius: 30px;
+    border: 1px solid rgba(201,164,92,.35);
+    box-shadow: 0 30px 60px rgba(0,0,0,.08);
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* INNER FRAME */
+.invitation::before {
+    content: "";
+    position: absolute;
+    inset: 14px;
+    border-radius: 24px;
+    border: 1px solid rgba(201,164,92,.25);
+}
+
+/* ===== BLINK ===== */
+.blink {
+    position: absolute;
+    width: 46px;
+    height: 46px;
+    animation: blink 3s infinite ease-in-out;
+}
+
+.blink::before,
+.blink::after {
+    content: "";
+    position: absolute;
+    background: linear-gradient(to right, transparent, var(--gold-bright), transparent);
+    box-shadow: 0 0 10px rgba(228,204,133,.9);
+}
+
+.blink::before {
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+}
+
+.blink::after {
+    left: 50%;
+    top: 0;
+    width: 2px;
+    height: 100%;
+}
+
+@keyframes blink {
+    0%,100% { opacity: .3; transform: scale(.85); }
+    50% { opacity: 1; transform: scale(1.1); }
+}
+
+.b1 { top: 24px; left: 28px; }
+.b2 { top: 72px; right: 40px; animation-delay: .6s; }
+.b3 { bottom: 80px; left: 26px; animation-delay: 1.2s; }
+.b4 { bottom: 28px; right: 28px; animation-delay: 1.8s; }
+
+/* TEXT */
+.small {
+    font-size: 11px;
+    letter-spacing: 3px;
+    opacity: .75;
+}
+
+.title {
+    font-family: 'Playfair Display', serif;
+    font-size: 46px;
+    color: var(--gold);
+    margin: 18px 0 22px;
+}
+
+.subtitle {
+    font-size: 13px;
+    letter-spacing: 1.6px;
+    opacity: .85;
+    margin-bottom: 28px;
+}
+
+.divider {
+    width: 46px;
+    height: 1px;
+    background: var(--gold);
+    margin: 26px auto;
+}
+
+.date {
+    font-size: 13px;
+    letter-spacing: 1.2px;
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    margin-bottom: 18px;
+}
+
+.info {
+    font-size: 13px;
+    line-height: 1.75;
+}
+
+/* MAP LINK */
+.map-link {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 12px;
+    letter-spacing: 1.4px;
+    color: var(--gold);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(201,164,92,.4);
+    padding-bottom: 2px;
+}
+
+.map-link:hover {
+    color: var(--gold-bright);
+    border-color: var(--gold-bright);
+}
+
+/* RSVP */
+.rsvp {
+    margin-top: 36px;
+}
+
+.rsvp a {
+    display: inline-block;
+    padding: 12px 44px;
+    border: 1px solid var(--gold);
+    border-radius: 999px;
+    text-decoration: none;
+    color: var(--gold);
+    font-size: 13px;
+    letter-spacing: 1.4px;
+}
+
+.rsvp a:hover {
+    background: var(--gold);
+    color: #fff;
+}
+</style>
+</head>
+
+<body>
+
+<div class="invitation">
+
+    <!-- BLINK -->
+    <div class="blink b1"></div>
+    <div class="blink b2"></div>
+    <div class="blink b3"></div>
+    <div class="blink b4"></div>
+
+    <div class="small">JOIN US FOR A</div>
+
+    <div class="title">Birthday<br>Celebration</div>
+
+    <div class="subtitle">
+        CELEBRATING KEDY<br>
+        17TH BIRTHDAY
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="date">
+        <span>FRIDAY</span>
+        <span>16 JANUARY</span>
+    </div>
+
+    <div class="info">
+        AT 06.00 PM<br>
+        WISTARA CAFE
+    </div>
+
+    <!-- MAP (FIXED) -->
+    <a
+        class="map-link"
+        href="https://maps.app.goo.gl/UE1aa2TssVRTYoMw8?g_st=ic"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        VIEW LOCATION ON MAP
+    </a>
+
+    <!-- RSVP (FIXED) -->
+    <div class="rsvp">
+        <a
+          href="https://wa.me/6281234567890?text=Halo%20saya%20akan%20hadir%20di%20acara%20ulang%20tahun"
+          target="_blank"
+        >
+            RSVP
+        </a>
+    </div>
+
+</div>
+
+</body>
+</html>
